@@ -1,14 +1,9 @@
 using TestProject;
 
-Console.WriteLine($"{Config.AppName} v{Config.Version}");
-Console.WriteLine("---");
-
 var calculator = Config.CreateDefaultCalculator();
+var discounter = new DiscountCalculator();
 
-Console.WriteLine($"5 + 3 = {calculator.Add(5, 3)}");
-Console.WriteLine($"10 - 4 = {calculator.Subtract(10, 4)}");
-Console.WriteLine($"6 * 7 = {calculator.Multiply(6, 7)}");
-Console.WriteLine($"20 / 4 = {calculator.Divide(20, 4)}");
-
-Console.WriteLine();
-Console.WriteLine("Calculator demonstration complete!");
+int price = 200;
+Console.WriteLine($"Original: {price}");
+Console.WriteLine($"Discounted 20%: {discounter.ApplyDiscount(price, 20)}");
+Console.WriteLine($"Sanity: {calculator.Add(1, 2)}");
